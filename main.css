@@ -1,0 +1,52 @@
+:root{
+    --purple: #c1bddc;
+    --azure: azure;
+    --black:#000;
+    color:var(--fontcolor);
+
+}
+body{
+    background: var(--bg);
+    font-family: monospace;
+}
+
+ul{
+    font-family: monospace;
+}
+
+li{
+    list-style: none;
+}
+
+#msg{
+    font-family: monospace;
+}
+
+.switch-theme{
+    list-style: circle;
+}
+
+.btn{
+    color: #000;
+    background-color: #877bd3;
+    position: absolute;
+    top: 20px;
+    left: 1800px;
+    height: 25px;
+    width: 50px;
+    border-radius: 20%;
+    font-family: monospace
+}
+
+.btn:focus{ outline-style: nones;}
+
+.ligth-theme{
+    --bg :var(--purple);
+    --fontcolor:var(--black);
+}
+
+.dark-theme{
+    color: #c1bddc;
+    --bg:var(--black);
+}
+

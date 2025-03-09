@@ -1,52 +1,107 @@
-:root{
-    --purple: #c1bddc;
-    --azure: azure;
-    --black:#000;
-    color:var(--fontcolor);
-
-}
 body{
-    background: var(--bg);
     font-family: monospace;
-}
-
-ul{
-    font-family: monospace;
-}
-
-li{
-    list-style: none;
-}
-
-#msg{
-    font-family: monospace;
-}
-
-.switch-theme{
-    list-style: circle;
-}
-
-.btn{
-    color: #000;
-    background-color: #877bd3;
-    position: absolute;
-    top: 20px;
-    left: 1800px;
-    height: 25px;
-    width: 50px;
-    border-radius: 20%;
-    font-family: monospace
-}
-
-.btn:focus{ outline-style: nones;}
-
-.ligth-theme{
-    --bg :var(--purple);
-    --fontcolor:var(--black);
-}
-
-.dark-theme{
     color: #c1bddc;
-    --bg:var(--black);
+    background: #000;
 }
+
+h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+}
+
+.texto #msg{
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    margin: 15px auto;
+    width: 80vw; 
+    max-width: 2000px; 
+    min-height: 4.5em; 
+    overflow: hidden;
+}
+
+#msg::after{
+    content: '|';
+    margin-left: 5px;
+    opacity: 1;
+    animation: pisca 0.7s infinite;
+}
+
+@keyframes pisca{
+    0%, 100%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+}
+
+.container{
+    padding: 20px 0;
+}
+
+.wrapper{
+    padding: 20px 1.5%;
+}
+
+.card_area{
+    display: grid;
+    margin-top: 0px;
+    grid-gap:50px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card{
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(152, 136, 255, 0.123);
+}
+
+.card img{
+    height: 400px;
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.5s;
+}
+
+.overlay {
+    height: 100%;
+    position: absolute;
+    top: 0; 
+    left: 0;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    flex-direction: column;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out;
+}
+
+.overlay h2, .overlay p {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.card:hover .overlay {
+    height: 100%;
+    opacity: 1;
+}
+
+.card:hover .overlay h2,
+.card:hover .overlay p {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);       
+}
+
 

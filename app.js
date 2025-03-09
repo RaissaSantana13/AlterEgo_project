@@ -1,15 +1,13 @@
-'use strict'
-const switcher = document.querySelector('.btn');
+function typeWrite(elemento){
+    const textoArray = elemento.innerHTML.split('');
+    elemento.innerHTML = ' ';
+    textoArray.forEach(function(letra, i){   
+      
+    setTimeout(function(){
+        elemento.innerHTML += letra;
+    }, 75 * i)
 
-switcher.addEventListener('click', function(){
-    document.body.classList.toggle('dark-theme')
-
-    var className=document.body.className;
-    if(className=="ligth-theme"){
-        this.textContent='Dark';
-    }
-    else{
-        this.textContent='Ligth';
-    }
-    console.log('current class name: '+className);
-})
+  });
+}
+const titulo = document.querySelector('#msg');
+typeWrite(titulo);
